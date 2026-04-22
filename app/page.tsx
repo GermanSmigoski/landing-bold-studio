@@ -35,7 +35,14 @@ export default function AgencyPage() {
     <div className="bg-black text-white min-h-screen font-sans">
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center gap-8 md:hidden">
+        <div className="fixed inset-0 z-[60] bg-black flex flex-col items-center justify-center gap-8 md:hidden">
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="absolute top-5 right-6 text-white/40 hover:text-white text-3xl leading-none"
+            aria-label="Cerrar menú"
+          >
+            ✕
+          </button>
           {navLinks.map((l) => (
             <a
               key={l.label}
@@ -76,7 +83,7 @@ export default function AgencyPage() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menú"
           >
-            {menuOpen ? '✕' : '☰'}
+            ☰
           </button>
         </div>
       </nav>
@@ -84,13 +91,13 @@ export default function AgencyPage() {
       {/* Hero */}
       <section className="relative min-h-[90vh] flex flex-col justify-center px-6 md:px-12 py-20 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full border-l border-white/5 pointer-events-none" />
-        <div className="absolute bottom-20 right-12 text-[200px] font-black leading-none text-white/[0.03] select-none pointer-events-none">BOLD</div>
+        <div className="absolute bottom-20 right-12 text-[200px] font-black leading-none text-white/[0.03] select-none pointer-events-none hidden sm:block">BOLD</div>
 
         <div className="max-w-6xl">
           <p className="text-[#FFE600] text-sm font-black tracking-[0.4em] uppercase mb-8">
             Agencia Creativa — Buenos Aires
           </p>
-          <h1 className="text-[clamp(3rem,10vw,9rem)] font-black leading-[0.9] tracking-tighter uppercase mb-10">
+          <h1 className="text-[clamp(2rem,10vw,9rem)] font-black leading-[0.9] tracking-tighter uppercase mb-10">
             Hacemos<br />
             <span style={{ WebkitTextStroke: '2px white', color: 'transparent' }}>marcas</span>
             <br />que importan
